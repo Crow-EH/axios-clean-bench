@@ -1,0 +1,20 @@
+{
+  "name": "axios-json-clean",
+  "version": "0.0.1",
+  "scripts": {
+    "start-app": "node app.js",
+    "start-mock": "node mock.js",
+    "test": "jest",
+    "bench": "docker-compose run k6 run /scripts/bench.js",
+    "up": "docker-compose up",
+    "down": "docker-compose rm -fsv"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1"
+  },
+  "license": "MIT"
+}
