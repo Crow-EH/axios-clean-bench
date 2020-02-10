@@ -8,7 +8,16 @@ services:
     volumes:
       - .:/app
     working_dir: /app
-    command: yarn start
+    command: yarn start-app
+
+  mock:
+    image: node:12.15-buster-slim
+    ports:
+      - "8081:8081"
+    volumes:
+      - .:/mock
+    working_dir: /mock
+    command: yarn start-mock
 
   influxdb:
     image: influxdb:latest
@@ -27,6 +36,8 @@ services:
       - GF_AUTH_BASIC_ENABLED=false
     volumes:
       - ./grafana-datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml
+      - ./grafana-provisioning.yml:/etc/grafana/provisioning/dashboards/dashboard.yml
+      - ./k6-load-testing-results_rev3.json:/var/lib/grafana/dashboards/k6.json
 
   k6:
     image: loadimpact/k6:latest

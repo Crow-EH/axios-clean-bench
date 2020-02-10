@@ -5,8 +5,11 @@
     "start-app": "node app.js",
     "start-mock": "node mock.js",
     "test": "jest",
-    "bench": "docker-compose run k6 run /scripts/bench.js",
-    "up": "docker-compose up",
+    "bench-raw": "docker-compose run k6 run -e BENCH=raw /scripts/bench.js",
+    "bench-no-null": "docker-compose run k6 run -e BENCH=no-null /scripts/bench.js",
+    "bench-clean": "docker-compose run k6 run -e BENCH=clean /scripts/bench.js",
+    "bench-parano": "docker-compose run k6 run -e BENCH=parano /scripts/bench.js",
+    "up": "docker-compose up -d",
     "down": "docker-compose rm -fsv"
   },
   "devDependencies": {
