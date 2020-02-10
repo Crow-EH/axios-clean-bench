@@ -8,7 +8,7 @@
 
 ## Init
 
-Just run `yarn up` from the root of the project directory.
+Just run `yarn install` then `yarn up` from the root of the project directory.
 
 Since InfluxDB takes time to start, you'll have to wait 3 to 10 seconds before running any benchmark.
 
