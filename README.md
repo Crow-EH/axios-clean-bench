@@ -8,11 +8,13 @@
 
 ## Init
 
-Just run `yarn up` from the root of the project directory
+Just run `yarn up` from the root of the project directory.
 
 Since InfluxDB takes time to start, you'll have to wait 3 to 10 seconds before running any benchmark.
 
 A grafana will be available at http://localhost:3000/.
+
+To completely clean all the containers and their volumes, run `yarn down`.
 
 ## Benchmarks
 
@@ -41,8 +43,8 @@ This endpoint returns a big JSON stripped from any null or empty string.
 
 `yarn bench-parano`
 
-Runs a benchmark against http://localhost:8080/parano
-This endpoint returns a big JSON stripped from any null, empty string, object or array.
+Runs a benchmark against http://localhost:8080/parano.
+This endpoint returns a big JSON stripped from any null, empty string, object and array.
 
 The arrays and objects are cleaned recursively thanks to `JSON.parse`'s native behavior.
 
